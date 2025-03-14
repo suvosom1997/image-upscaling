@@ -12,4 +12,7 @@ This project explores and compares various image upscaling techniques to enhance
     4. Analyze image quality metrics
 
 
-STREAMLIT PLATFORMM based
+STREAMLIT PLATFORM based
+
+To run use the following command in the terminal:
+>> streamlit run path_to_your_file/modified-streamlit-app.py
