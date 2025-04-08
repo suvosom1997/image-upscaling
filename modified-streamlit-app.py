@@ -868,7 +868,7 @@ elif st.session_state.page == 'main':
         # Display the original image with size information
         st.subheader("Original Image")
         original_size = get_image_size_str(image)
-        st.image(image, caption=f"Original Image - {original_size}", use_column_width=True)
+        st.image(image, caption=f"Original Image - {original_size}", use_container_width=True)
         
         # Compress the image
         with st.spinner(f"Compressing image to {compression_quality}% quality..."):
@@ -877,7 +877,7 @@ elif st.session_state.page == 'main':
         # Display the compressed image with size info
         compressed_size = get_image_size_str(compressed_img)
         st.subheader(f"Compressed Image ({compression_quality}% Quality)")
-        st.image(compressed_img, caption=f"Compressed to {compression_quality}% Quality - {compressed_size}", use_column_width=True)
+        st.image(compressed_img, caption=f"Compressed to {compression_quality}% Quality - {compressed_size}", use_container_width=True)
         
         # Provide a download link for the compressed image
         st.markdown(get_downloadable_img(compressed_img, "compressed_image"), unsafe_allow_html=True)
@@ -898,7 +898,7 @@ elif st.session_state.page == 'main':
                 nearest = get_basic_upscaled(compressed_img, "nearest", scale_factor)
                 upscaled_images["Nearest Neighbor"] = nearest
                 nearest_size = get_image_size_str(nearest)
-                st.image(nearest, caption=f"Nearest Neighbor - {nearest_size}", use_column_width=True)
+                st.image(nearest, caption=f"Nearest Neighbor - {nearest_size}", use_container_width=True)
                 st.markdown(get_downloadable_img(nearest, "nearest_neighbor"), unsafe_allow_html=True)
                 
                 # Calculate metrics
@@ -916,7 +916,7 @@ elif st.session_state.page == 'main':
                 bilinear = get_basic_upscaled(compressed_img, "bilinear", scale_factor)
                 upscaled_images["Bilinear"] = bilinear
                 bilinear_size = get_image_size_str(bilinear)
-                st.image(bilinear, caption=f"Bilinear - {bilinear_size}", use_column_width=True)
+                st.image(bilinear, caption=f"Bilinear - {bilinear_size}", use_container_width=True)
                 st.markdown(get_downloadable_img(bilinear, "bilinear"), unsafe_allow_html=True)
                 
                 # Calculate metrics
@@ -934,7 +934,7 @@ elif st.session_state.page == 'main':
                 bicubic = get_basic_upscaled(compressed_img, "bicubic", scale_factor)
                 upscaled_images["Bicubic"] = bicubic
                 bicubic_size = get_image_size_str(bicubic)
-                st.image(bicubic, caption=f"Bicubic - {bicubic_size}", use_column_width=True)
+                st.image(bicubic, caption=f"Bicubic - {bicubic_size}", use_container_width=True)
                 st.markdown(get_downloadable_img(bicubic, "bicubic"), unsafe_allow_html=True)
                 
                 # Calculate metrics
@@ -954,7 +954,7 @@ elif st.session_state.page == 'main':
                 lanczos = get_basic_upscaled(compressed_img, "lanczos", scale_factor)
                 upscaled_images["Lanczos"] = lanczos
                 lanczos_size = get_image_size_str(lanczos)
-                st.image(lanczos, caption=f"Lanczos - {lanczos_size}", use_column_width=True)
+                st.image(lanczos, caption=f"Lanczos - {lanczos_size}", use_container_width=True)
                 st.markdown(get_downloadable_img(lanczos, "lanczos"), unsafe_allow_html=True)
                 
                 # Calculate metrics
@@ -973,7 +973,7 @@ elif st.session_state.page == 'main':
                 edi = get_edi_upscaled(compressed_img / 255.0, scale_factor)
                 upscaled_images["Edge-Directed Interpolation"] = edi
                 edi_size = get_image_size_str(edi)
-                st.image(edi, caption=f"Edge-Directed Interpolation (EDI) - {edi_size}", use_column_width=True)
+                st.image(edi, caption=f"Edge-Directed Interpolation (EDI) - {edi_size}", use_container_width=True)
                 st.markdown(get_downloadable_img(edi, "edge_directed"), unsafe_allow_html=True)
                 
                 # Calculate metrics
@@ -991,7 +991,7 @@ elif st.session_state.page == 'main':
                 nlm = get_nlm_upscaled(compressed_img / 255.0, scale_factor)
                 upscaled_images["Non-Local Means"] = nlm
                 nlm_size = get_image_size_str(nlm)
-                st.image(nlm, caption=f"Non-Local Means (NLM) - {nlm_size}", use_column_width=True)
+                st.image(nlm, caption=f"Non-Local Means (NLM) - {nlm_size}", use_container_width=True)
                 st.markdown(get_downloadable_img(nlm, "non_local_means"), unsafe_allow_html=True)
                 
                 # Calculate metrics
@@ -1030,7 +1030,7 @@ elif st.session_state.page == 'main':
             
             esrgan_status.success("ESRGAN upscaling complete!")
             esrgan_size = get_image_size_str(esrgan_np)
-            st.image(esrgan_np, caption=f"ESRGAN (AI-based Upscaling) - {esrgan_size}", use_column_width=True)
+            st.image(esrgan_np, caption=f"ESRGAN (AI-based Upscaling) - {esrgan_size}", use_container_width=True)
             st.markdown(get_downloadable_img(esrgan_np, "esrgan_upscaled"), unsafe_allow_html=True)
             
             # Calculate metrics
@@ -1071,26 +1071,26 @@ elif st.session_state.page == 'main':
                 if methods_row1:
                     cols = st.columns(len(methods_row1))
                     for i, method in enumerate(methods_row1):
-                        cols[i].image(upscaled_images[method], caption=method, use_column_width=True)
+                        cols[i].image(upscaled_images[method], caption=method, use_container_width=True)
                 
                 # Row 2
                 if methods_row2:
                     cols = st.columns(len(methods_row2))
                     for i, method in enumerate(methods_row2):
-                        cols[i].image(upscaled_images[method], caption=method, use_column_width=True)
+                        cols[i].image(upscaled_images[method], caption=method, use_container_width=True)
                 
                 # Row 3
                 if methods_row3:
                     cols = st.columns(len(methods_row3))
                     for i, method in enumerate(methods_row3):
-                        cols[i].image(upscaled_images[method], caption=method, use_column_width=True)
+                        cols[i].image(upscaled_images[method], caption=method, use_container_width=True)
             
             # Individual method comparison tabs
             for i, method in enumerate(upscaled_images.keys()):
                 with tabs[i+1]:
                     col1, col2 = st.columns(2)
-                    col1.image(compressed_img, caption="Compressed Image", use_column_width=True)
-                    col2.image(upscaled_images[method], caption=f"{method} Upscaled", use_column_width=True)
+                    col1.image(compressed_img, caption="Compressed Image", use_container_width=True)
+                    col2.image(upscaled_images[method], caption=f"{method} Upscaled", use_container_width=True)
                     
                     # Display metrics for this method
                     method_metrics = next((m for m in metrics_data if m["Method"] == method), None)
