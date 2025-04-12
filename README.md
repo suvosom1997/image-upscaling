@@ -2,7 +2,7 @@
 Contrasting Traditional Upscaling and GAN-Based Restoration for Compressed Image Enhancement
 
 #Link of Streamlit website
-Link [ https://image-upscaling-suvodemo.streamlit.app/]
+[ https://image-upscaling-suvodemo.streamlit.app/]
 
 This project explores and compares various image upscaling techniques to enhance compressed images. 
     We examine both traditional interpolation methods and modern deep learning-based approaches, 
