@@ -630,8 +630,8 @@ if st.session_state.page == 'intro':
     # ]
     
     # Create a DataFrame for better display
-    team_df = pd.DataFrame(team_data)
-    st.table(team_df)
+    # team_df = pd.DataFrame(team_data)
+    # st.table(team_df)
     
     # Project Introduction
     st.header("Project Overview")
