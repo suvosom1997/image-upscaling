@@ -620,14 +620,14 @@ class ESRGANUpscaler:
 if st.session_state.page == 'intro':
     st.title("Contrasting Traditional Upscaling and GAN-Based Restoration for Compressed Image Enhancement")
     
-    # Project Team Information
-    st.header("Project Team")
-    team_data = [
-        {"Name": "Suvodip Som", "Roll Number": "M23CSA533"},
-        {"Name": "Anindya Bandyopadhyay", "Roll Number": "M23CSA508"},
-        {"Name": "Swapnil Adak", "Roll Number": "M23CSA534"},
-        {"Name": "Tushar Kumar Tiwari", "Roll Number": "M23CSA537"}
-    ]
+    # # Project Team Information
+    # st.header("Project Team")
+    # team_data = [
+    #     {"Name": "Suvodip Som", "Roll Number": "M23CSA533"},
+    #     {"Name": "Anindya Bandyopadhyay", "Roll Number": "M23CSA508"},
+    #     {"Name": "Swapnil Adak", "Roll Number": "M23CSA534"},
+    #     {"Name": "Tushar Kumar Tiwari", "Roll Number": "M23CSA537"}
+    # ]
     
     # Create a DataFrame for better display
     team_df = pd.DataFrame(team_data)
